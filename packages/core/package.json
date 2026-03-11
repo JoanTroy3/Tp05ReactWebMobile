@@ -1,0 +1,15 @@
+{
+  "name": "@tp06/core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "lint": "echo 'No lint for core yet'"
+  },
+  "peerDependencies": {
+    "react": "19.2.4"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.21"
+  }
+}
