@@ -2,7 +2,6 @@ import { useUserProfile } from '@tp06/core';
 import { View, Text, Image, ActivityIndicator, StyleSheet } from 'react-native';
 
 export function UserProfile() {
-  // TODO: Etape 3 - Les Mains Mobiles
   const { user, loading, error } = useUserProfile();
 
   if (loading) {
@@ -22,7 +21,6 @@ export function UserProfile() {
     );
   }
 
-  // TODO: Afficher le profil avec <View>, <Image> et <Text>
   return (
           <View style={styles.container}>
             <Text style={styles.title}>Profil Utilisateur (Mobile)</Text>
