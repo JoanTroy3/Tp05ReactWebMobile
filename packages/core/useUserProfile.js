@@ -6,7 +6,7 @@ import {fetchUser} from "./services/api";
  * Ne doit contenir AUCUN code spécifique à la plateforme (pas de div, pas de View).
  */
 export function useUserProfile() {
-        const {data, isLoading, error} = useQuery(
+        const {data, isLoading, error, refetch} = useQuery(
                 {
                         queryKey: ['users'],
                         queryFn: fetchUser,
@@ -19,5 +19,6 @@ export function useUserProfile() {
                 user: data?.results[0],
                 loading: isLoading,
                 error: error,
+                refetch
         };
 }

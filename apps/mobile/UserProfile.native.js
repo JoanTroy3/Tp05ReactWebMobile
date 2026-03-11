@@ -1,8 +1,8 @@
 import { useUserProfile } from '@tp06/core';
-import { View, Text, Image, ActivityIndicator, StyleSheet } from 'react-native';
+import {View, Text, Image, ActivityIndicator, StyleSheet, Button} from 'react-native';
 
 export function UserProfile() {
-  const { user, loading, error } = useUserProfile();
+  const { user, loading, error, refetch } = useUserProfile();
 
   if (loading) {
     return (
@@ -34,6 +34,9 @@ export function UserProfile() {
 
                       <Text style={styles.email}>{user.email}</Text>
                       <Text style={styles.email}>{user.location.city}, {user.location.country}</Text>
+                      <View style={styles.buttonContainer}>
+                        <Button title="Rafraîchir" onPress={() => refetch()} />
+                      </View>
                     </View>
 
             )}
@@ -80,5 +83,9 @@ const styles = StyleSheet.create({
   email: {
     fontSize: 16,
     color: '#555',
+  },
+  buttonContainer: {
+    marginTop: 16,
+    width: '100%',
   },
 });
